@@ -1,0 +1,32 @@
+.damage{
+
+}
+.mana-bar {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  padding: .5rem;
+  background: #fff;
+  position: relative;
+  span{
+    position: absolute;
+  }
+  .bar {
+    background: #2196f3;
+    width: 100%;
+    height: 10px;
+    position: relative;
+    transition: width .5s linear;
+  }
+  .hit {
+    background: rgba(255,255,255,0.6);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0px;
+    transition: width .5s linear;
+  }
+}

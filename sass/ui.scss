@@ -1,0 +1,531 @@
+@import "materialize";
+
+.health-bar {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  padding: .5rem;
+  background: #fff;
+  position: relative;
+  span {
+    position: absolute;
+  }
+  .bar {
+    background: #CC5544;
+    width: 100%;
+    height: 10px;
+    position: relative;
+    transition: width .5s linear;
+  }
+  .hit {
+    background: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0px;
+    transition: width .5s linear;
+  }
+}
+
+.mana-bar {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  padding: .5rem;
+  background: #fff;
+  position: relative;
+  span {
+    position: absolute;
+  }
+  .bar {
+    background: #2196f3;
+    width: 100%;
+    height: 10px;
+    position: relative;
+    transition: width .5s linear;
+  }
+  .hit {
+    background: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0px;
+    transition: width .5s linear;
+  }
+}
+
+body {
+  background-color: #EEEDF2;
+  // color: #000811 !important;
+}
+
+#login{
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  #loginBtn {
+    color: #222;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(#fff, .2);
+    border-radius: 50px;
+    img{
+      max-height: 100%;
+      width: 30px;
+      top: 3px;
+    }
+  }
+}
+#slider{
+  position: absolute;
+  height: 100%  !important;
+  width: 100%;
+  top: 0;
+  left: 0;
+  a{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    &:first-child{
+      background: url(../img/1.jpg) no-repeat;
+    }
+    &:nth-child(2){
+      background: url(../img/2.jpg) no-repeat;
+    }
+    &:nth-child(3){
+      background: url(../img/3.jpg) no-repeat;
+    }
+    &:nth-child(4){
+      background: url(../img/4.jpg) no-repeat;
+    }
+    &:last-child{
+      background: url(../img/5.jpg) no-repeat;
+    }
+  }
+}
+#status form {
+  .row {
+    margin-bottom: 0;
+  }
+  .input-field {
+    margin-top: 0;
+  }
+  #fa {
+    padding: .5rem;
+    h5[for="fa"] {
+      margin-bottom: 1rem;
+      text-align: left;
+      font-size: 1.2rem;
+    }
+    .input-field {
+      position: relative;
+      display: inline-block;
+      width: 30%;
+      border: transparent;
+      text-align: center;
+      label {
+        &[for="fAfoca"]:after, &[for="fAhab"]:after {
+          content: '+';
+          position: absolute;
+          top: 20px;
+          right: -5px;
+          font-size: 1rem;
+          opacity: 0;
+          transition: all .3s;
+        }
+        &.active {
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          text-align: center;
+          &[for="fAfoca"]:after, &[for="fAhab"]:after {
+            opacity: 1;
+          }
+        }
+      }
+      input {
+        margin: 0;
+        text-align: center;
+        border: transparent;
+      }
+    }
+    #fAtotal {
+      position: absolute;
+      top: 0px;
+      right: 0;
+      width: 35px;
+      height: 25px;
+      margin: 0;
+      padding: initial;
+      border: transparent;
+      font-size: 1.5rem;
+    }
+  }
+  #fd {
+    padding: .5rem;
+    h5[for="fd"] {
+      margin-bottom: 1rem;
+      text-align: left;
+      font-size: 1.2rem;
+    }
+    .input-field {
+      position: relative;
+      display: inline-block;
+      width: 30%;
+      border: transparent;
+      text-align: center;
+      label {
+        &[for="fDarmor"]:after, &[for="fDhab"]:after {
+          content: '+';
+          position: absolute;
+          top: 20px;
+          right: -5px;
+          font-size: 1rem;
+          opacity: 0;
+          transition: all .3s;
+        }
+        &.active {
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          text-align: center;
+          &[for="fDarmor"]:after, &[for="fDhab"]:after {
+            opacity: 1;
+          }
+        }
+      }
+      input {
+        margin: 0;
+        text-align: center;
+        border: transparent;
+      }
+    }
+    #fAtotal, #fDtotal {
+      position: absolute;
+      top: 0px;
+      right: 0;
+      width: 35px;
+      height: 25px;
+      margin: 0;
+      padding: initial;
+      border: transparent;
+      font-size: 1.5rem;
+    }
+  }
+  #nameChar, #forca, #habilidade, #armor, #resist, #pdf {
+    overflow: hidden;
+  }
+  #nameChar input, #forca input, #habilidade input, #armor input, #resist input, #pdf input {
+    padding-left: 6rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  #nameChar label, #forca label, #habilidade label, #armor label, #resist label, #pdf label {
+    font-size: 1rem;
+    transform: none;
+  }
+  #salvar{
+    border-radius: 50px;
+    min-width: 100px;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+}
+
+#return {
+  display: none;
+  .card-content > a {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    background-color: #fff !important;
+    color: #222;
+  }
+}
+
+#editBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  background-color: #ffffff;
+  .remove_field {
+    background-color: #ffffff;
+    right: 24px;
+    bottom: -26px;
+    z-index: 99;
+    box-shadow: none;
+  }
+}
+
+#userInfo {
+  position: relative;
+  min-height: 100px;
+  background-color: rgba(255, 0, 0, 0.5);
+  margin-bottom: 50px;
+  .imgUser {
+    position: relative;
+    display: block;
+    width: 70px;
+    height: 70px;
+    background-color: #eee;
+    border-radius: 100%;
+    top: 20px;
+    overflow: hidden;
+  }
+  div:last-child h1 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+  .sair {
+    position: absolute;
+    right: 0;
+    background: transparent;
+    border: none;
+    img {
+      max-width: 25px;
+      height: 40px;
+    }
+  }
+}
+
+#hp, #mp {
+  padding: .5rem 0;
+  h5{
+    font-size: 1.2rem;
+    width: 30%;
+    display: inline-block;
+  }
+  .separador{
+    position: absolute;
+    right: 2.9rem;
+    top: 24px;
+  }
+}
+
+#hp .bar, #mp .bar {
+  height: 5px !important;
+}
+
+#hp input, #mp input {
+  position: relative;
+  margin: 0;
+  height: 3rem;
+  border: transparent;
+  text-align: center;
+  display: inline-block;
+  width: 29%;
+}
+
+#hp input {
+  &.hpTotal {
+    position: relative;
+    font-weight: 500;
+    display: inline-block;
+    width: 29%;
+    font-size: 1.2rem;
+    text-align: left;
+  }
+}
+
+#mp input {
+  &.mpTotal {
+    position: relative;
+    font-weight: 500;
+    display: inline-block;
+    width: 29%;
+    font-size: 1.2rem;
+    text-align: left;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.card .card-content {
+  padding: .5rem 0;
+  h5 {
+    text-align: center;
+    margin: 0;
+  }
+}
+#vantagemList, #desvantagemList{
+  .collapsible {
+    box-shadow: none;
+    .collapsible-header{
+      padding-left: 3rem;
+      .badge{
+        @extend .blue;
+        border-radius: 50px;
+        color: #fff;
+      }
+      label{
+        font-size: initial;
+        color: inherit;
+      }
+    }
+    .collapsible-body{
+      padding: .5rem;
+    }
+  }
+  #salvarVant, #salvarDesv{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 43px;
+    [type="checkbox"] + label{
+      left: .5rem;
+      top: 10px;
+    }
+  }
+}
+img{
+  max-width: 100%;
+}
+.hover{
+  background-color: rgba(#333, .5);
+  min-height: 50px;
+}
+#vantagemWrap, #desvantagemWrap{
+  .card-content{
+    position: relative;
+  }
+  #listVants, #listDesvants{
+    display: block;
+    margin: 0 auto;
+    border-radius: 50px;
+    min-width: 80px;
+    i{
+      transition: all  .3s ease-in-out;
+      &.rotate{
+        transform: rotate(115deg);
+      }
+    }
+  }
+}
+  li.mismatch{
+    .collapsible-header{
+      background-color: #eee !important;
+    }
+  }
+blockquote{
+  border-left-color: #2196F3;
+  border-right: 5px solid #2196F3;
+  h6{
+    @extend .center-align;
+    font-size: 1.3rem;
+  }
+}
+.loader{
+  position: fixed;
+  z-index: 999;
+  left: 50%;
+  margin-left: -15px;
+  display: table;
+  margin: 0 auto;
+  margin-top: 1rem;
+  .preloader-wrapper {
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 100%;
+  }
+}
+.removeItem{
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0;
+  border-radius: 0;
+  width: 30px;
+  height: 43px;
+  background-color: transparent;
+  box-shadow: none;
+  z-index: 1;
+  i{
+    transform: rotate(45deg);
+  }
+}
+
+#myVantagens, #myDesvantagens{
+  position: relative;
+  #removeItem{
+    position: absolute;
+    height: 43px;
+    width: 43px;
+    right: 0;
+    z-index: 999;
+    background-color: transparent !important;
+    padding: 0 .5rem;
+    right: 0;
+    z-index: 999;
+    background-color: rgba(#000, .05) !important;
+    box-shadow: none !important;
+    i{
+      transform: rotate(45deg);
+    }
+    &:hover, &:active, &:focus{
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+  }
+}
+.collapsible-body{
+  padding: .5rem !important;
+}
+
+#listaVantagens{
+  .card-image{
+    background-image: url(../img/5409ec5f958545f871fa0a2bca140590.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+    padding-bottom: 30px;
+    .card-title{
+      z-index: 1;
+    }
+    a{
+      @extend .blue;
+    }
+    &:after{
+      content: '';
+      background-color: rgba(0,0,0,.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .card-content{
+    max-height: 100%;
+    padding: 0;
+  }
+  .collapsible{
+    margin: 0;
+    .badge{
+      color: #fff;
+      border-radius: 50px;
+    }
+  }
+}
+.modal{
+  p{
+    word-break: break-all;
+  }
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.1.1/firebaseui.css" />
+    <link type="text/css" rel="stylesheet" href="css/ui.min.css"  media="screen,projection"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="google-signin-client_id" content="947549359156-9jm75im3sqd3d257fr2so0715vrrj45q.apps.googleusercontent.com">
+  </head>
+
+  <body>
+   <nav>
+      <div class="nav-wrapper blue">
+        <a href="#!" class="brand-logo">Status</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li class="active"><a href="status.html">Status</a></li>
+          <li><a href="vantagens.html">Vantagens</a></li>
+          <li><a href="desvantagens.html">Desvantagens</a></li>
+          <li><a href="magias.html">Magias</a></li>
+        </ul>
+        <div class="side-nav" id="mobile-demo">
+          <div id="userInfo" class="row blue">
+            <button type="button" class="waves-effect waves-blue blue sair" onclick="sair();">
+              <img src="img/exit.svg" alt="">
+            </button>
+              <div class="col s4">
+                <div class="imgUser">
+                  <img src="">
+                </div>
+              </div>
+              <div class="col s8">
+                <h1 class="userName">Jhon Doe</h1>
+                <span class="userMail">email@gmail.com</span>
+              </div>
+          </div>
+          <ul>
+            <li><a href="status.html">Status</a></li>
+            <li><a href="vantagens.html">Vantagens</a></li>
+            <li><a href="desvantagens.html">Desvantagens</a></li>
+            <li><a href="magias.html">Magias</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="loader scale-transition">
+    </div>
+      <div class="row">
+        <div class="col s12">
+          <div id="status" class="scale-transition scale-out">
+            <div class="card">
+              <div class="card-content">
+                <form>
+                  <div class="row">
+                    <div class="col s12">
+                      <div id="nameChar" class="input-field">
+                        <input type="text" class="">
+                        <label for="nameChar">Nome</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s6">
+                      <div class="row">
+                        <div class="col s12">
+                          <div id="hp" class="health-bar">
+                            <div class="bar">
+                              <div class="hit"></div>
+                            </div>
+                            <h5>PV:</h5>
+                            <input type="number" id="hpTotal" class="hpTotal">
+                            <div class="separador">/</div>
+                            <input type="number" class="hpDamage" name="" value="" placeholder="Dano">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col s6">
+                      <div class="row">
+                        <div class="col s12">
+                          <div id="mp" class="mana-bar">
+                            <div class="bar">
+                              <div class="hit"></div>
+                            </div>
+                            <h5>MP:</h5>
+                            <input type="number" id="mpTotal" class="mpTotal">
+                            <div class="separador">/</div>
+                            <input type="number" class="mpDamage" name="" value="" placeholder="dano">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s6">
+                      <div id="fa" class="input-field">
+                        <h5 for="fa">FAtaque</h5>
+                        <div class="input-field">
+                          <label for="fAfoca">Força</label>
+                          <input type="number" id="fAfoca" class="">
+                        </div>
+                        <div class="input-field">
+                          <label for="fAhab">Hab</label>
+                          <input type="number" id="fAhab" class="">
+                        </div>
+                        <div class="input-field">
+                          <label for="fAextra">Extra</label>
+                          <input type="number" id="fAextra" class="">
+                        </div>
+                        <input type="number" id="fAtotal" class="">
+                      </div>
+                    </div>
+                    <div class="col s6">
+                      <div id="fd" class="input-field">
+                        <h5 for="fd">FDefesa</h5>
+                        <div class="input-field">
+                          <label for="fDarmor">Arm</label>
+                          <input type="number" id="fDarmor" class="">
+                        </div>
+                        <div class="input-field">
+                          <label for="fDhab">Hab</label>
+                          <input type="number" id="fDhab" class="">
+                        </div>
+                        <div class="input-field">
+                          <label for="fDextra">Extra</label>
+                          <input type="number" id="fDextra" class="">
+                        </div>
+                        <input type="text" id="fDtotal" class="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s12">
+                      <div id="forca" class="input-field">
+                        <input type="number" class=" fa">
+                        <label for="forca">Força</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s12">
+                      <div id="habilidade" class="input-field">
+                        <input type="number" class=" fa fd">
+                        <label for="habilidade">Habilidade</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s12">
+                      <div id="armor" class="input-field">
+                        <input type="number" class=" fd">
+                        <label for="armor">Armadura</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s12">
+                      <div id="resist" class="input-field">
+                        <input type="number" class="">
+                        <label for="resist">Resistencia</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s12">
+                      <div id="pdf" class="input-field">
+                        <input type="number" class="">
+                        <label for="pdf">PdF</label>
+                      </div>
+                    </div>
+                  </div>
+                  <a id="salvar" class="btn-floating halfway-fab waves-effect waves-blue blue">Salvar</a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <div id="listaVantagens" class="scale-transition scale-out">
+            <div class="card">
+              <div class="card-image">
+                <!-- <img src="http://images.picstatio.com/u/11f5da/small_red-fox-looking-away-plants.jpg"> -->
+                <span class="card-title"><h5>Vantagens</h5></span>
+                <a class="btn-floating halfway-fab waves-effect waves-light" href="vantagens.html"><i class="material-icons">add</i></a>
+              </div>
+              <div class="card-content">
+                <ul class="collapsible" data-collapsible="accordion">
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+      <script type="text/javascript" src="js/main/main.js"></script>
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <script src="https://apis.google.com/js/plus.js?onload=init"></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/googleSingInListeners.js"></script>
+      <script type="text/javascript" src="js/bin/materialize.min.js"></script>
+      <script type="text/javascript">
+        pageRed();
+        calculoFA();
+        calculoFD();
+        $(document).ready(function() {
+           $(".button-collapse").sideNav();
+           $('.collapsible').collapsible();
+           $('form input').change(function() {
+             $(this).addClass('validate');
+           });
+        });
+      </script>
+    </script>
+  </body>
+</html>
